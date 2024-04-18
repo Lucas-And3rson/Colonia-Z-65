@@ -1,0 +1,76 @@
+h1 {
+    text-align: center;
+    margin: auto 20px;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* CSS FLEXBOX 1 */
+  .titulo{
+    
+  }
+  #background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  
+  .banner{
+    display: flex;
+    justify-content: center;
+    margin: 45vh auto;
+ 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .banner h1 span{
+    color: #f2f2f2;
+  }
+  .flex {
+    display: flex;
+    background-color: rgb(242, 242, 242, 0.2);
+    border-radius: 15px;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 100px auto;
+  }
+  p.content-ctt{
+    display: flex;
+    flex-direction: row;
+  }
+
+  p > img.mini-logo-ctt{
+    width: 30px;
+    margin: 0 5px 0 0;
+  }
+  .flex > div {
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    flex: 1 1 200px;
+    margin: 10px;
+    transition: transform .7s;
+  }
+
+  .flex div.scale:hover{
+    transform: scale(1.03);
+  }
+
+  .flex > div > img{
+    border-radius: 15px;
+    padding: 15px;
+  }
+
+  .flex h3,p{
+    flex-wrap: wrap;
+    margin: 10px;
+  }
