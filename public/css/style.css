@@ -35,7 +35,7 @@ ul {
   #header li:hover{
     background-color: #1196ba;
   }
-  #header ul li.ativo{
+  #header li.ativo{
     background-color: #1196ba;
   }
   #header .btn-contato{
@@ -325,7 +325,6 @@ a{
     width: 230px;
     left: 50%;
     justify-content: center;
-
     margin-bottom: 40px;
     border-radius: 10px;
     background-color: lightcoral;
@@ -333,10 +332,8 @@ a{
 .editado-alert{
   display: flex;
   margin: auto;
-  width: 230px;
   left: 50%;
   justify-content: center;
-
   margin-bottom: 40px;
   border-radius: 10px;
   background-color: rgb(128, 148, 240);

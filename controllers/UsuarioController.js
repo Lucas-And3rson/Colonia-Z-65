@@ -64,7 +64,7 @@ class UsuarioController{
         if(req.session.usuario==null){
             res.render("usuario/cadastrar", {usuarioUpdate, status});
         }else{
-            res.render("/");
+            res.render("/hub");
         }
     }
     static async checkLogin(req, res){
@@ -72,7 +72,7 @@ class UsuarioController{
         if(user != null){
             if(bcryptjs.compareSync(req.body.senha, user.senha)){ //email e senha válidos
                 req.session.usuario = user.email;
-                res.redirect("/");
+                res.redirect("/hub");
             }else{ //senha inválida
                 res.redirect(`/usuarios/login?s=6&email=${req.body.email}`)
             }

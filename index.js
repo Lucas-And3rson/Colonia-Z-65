@@ -19,6 +19,9 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+const ClienteRoutes = require('./routes/ClienteRoutes');
+app.use(ClienteRoutes);
+
 const BoletoRoutes = require('./routes/BoletoRoutes');
 app.use(BoletoRoutes);
 
@@ -27,6 +30,13 @@ app.use(UsuarioRoutes);
 //Minha senha do Mongo: TV8wt2OrhQ4KhfIX
 //Minha URL: mongodb+srv://lucas:TV8wt2OrhQ4KhfIX@cluster0.kkoixjy.mongodb.net/?retryWrites=true&w=majority
 
+    app.get("/hub", (req, res)=> {
+        if(req.session.usuario!=undefined){
+            res.render("hub");
+        }else{
+            res.redirect("/usuarios/login");
+        }
+    });
     app.get("/", (req, res) => {
         res.render("index");
     });
