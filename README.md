@@ -1,3 +1,3 @@
-# Node & JavaScript
+# Projeto Node.js
  
-## Aprendendo como utilizar rotas e métodos com javaScript, EJS e node.js
+## Site admin e público publicado na rede
