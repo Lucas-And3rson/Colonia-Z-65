@@ -76,14 +76,18 @@
                                     <thead>
                                         <tr>
                                             <th>Nome</th>
-                                            <th>Idade</th>
+                                            <th>CPF</th>
+                                            <th>tipo</th>
+                                            <th>mes</th>
                                             <th>Ações</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Nome</th>
-                                            <th>Idade</th>
+                                            <th>CPF</th>
+                                            <th>tipo</th>
+                                            <th>mes</th>
                                             <th>Ações</th>
                                         </tr>
                                     </tfoot>
@@ -91,7 +95,9 @@
                                         <% for (const c of VClientes) {%>
                                                 <tr>
                                                     <td><%= c.nome %></td>
-                                                    <td><%= c.idade %></td>
+                                                    <td><%= c.cpf %></td>
+                                                    <td><%= c.tipo %></td>
+                                                    <td><%= c.mes %></td>
                                                     <td>
                                                         <a href="/cliente/<%=c.id%>" class='btn btn-success btn-icon-split btn-sm'>
                                                             <span class='icon text-white-50'>

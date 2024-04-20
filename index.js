@@ -22,9 +22,6 @@ app.use(express.static("public"));
 const ClienteRoutes = require('./routes/ClienteRoutes');
 app.use(ClienteRoutes);
 
-const BoletoRoutes = require('./routes/BoletoRoutes');
-app.use(BoletoRoutes);
-
 const UsuarioRoutes = require('./routes/UsuarioRoutes');
 app.use(UsuarioRoutes);
 //Minha senha do Mongo: TV8wt2OrhQ4KhfIX

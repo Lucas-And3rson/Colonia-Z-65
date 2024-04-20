@@ -8,13 +8,15 @@ class ClienteController{
     static async cadastrar(req, res){
         // const NovoCliente = req.body;
         // console.log(NovoCliente)
-        // VClientes.push(new Cliente(NovoCliente.id, NovoCliente.nome, NovoCliente.idade));
+        // VClientes.push(new Cliente(NovoCliente.id, NovoCliente.nome, NovoCliente.cpf));
         // res.redirect("./clientes?s=1");
         if(req.body._id == ''){ //cadastrar
             const novoCliente = new ClienteModel ({
                 id: req.body.id,
                 nome: req.body.nome,
-                idade: req.body.idade
+                cpf: req.body.cpf,
+                tipo: req.body.tipo,
+                mes: req.body.mes
             })
             await novoCliente.save();
             res.redirect("/clientes?s=1");
@@ -22,7 +24,9 @@ class ClienteController{
             const id = req.body.id;
             const clienteUpdate = {
                 nome: req.body.nome,
-                idade: req.body.idade
+                cpf: req.body.cpf,
+                tipo: req.body.tipo,
+                mes: req.body.mes
             }
             await ClienteModel.findOneAndUpdate({id:id}, clienteUpdate);
             res.redirect("/clientes?s=3");

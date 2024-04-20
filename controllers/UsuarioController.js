@@ -61,11 +61,7 @@ class UsuarioController{
             email: req.query.email,
             nivel: req.body.nivel
         };
-        if(req.session.usuario==null){
-            res.render("usuario/cadastrar", {usuarioUpdate, status});
-        }else{
-            res.render("/hub");
-        }
+        res.render("usuario/cadastrar", {usuarioUpdate, status});
     }
     static async checkLogin(req, res){
         const user = await UsuarioModel.findOne({ email: req.body.email });

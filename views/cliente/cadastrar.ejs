@@ -65,37 +65,33 @@
                                                     </div>
                                                     <form  action="/clientes" method="POST">
                                                         <div class="campo">
-                                                            <i class="material-symbols-outlined">deployed_code</i>
-                                                            <input <% if(clienteUpdate.id != undefined){ %> readonly <% } %>type="number" name="id" id="id" placeholder="Seu id" min="1" value="<%= clienteUpdate.id %>" required>
-                                                            <label for="id">Id</label>
+                                                            <input class="input-claro" type="text" name="nome" id="nome" value="<%= clienteUpdate.nome %>" placeholder="" required>
+                                                            <label for="nome">Nome Completo</label>
                                                         </div>
                                                         <div class="campo">
-                                                            <i class="material-symbols-outlined">person</i>
-                                                            <input type="text" name="nome" id="nome" value="<%= clienteUpdate.nome %>" placeholder="Seu nome" required>
-                                                            <label for="nome">Nome</label>
+                                                            <input class="input-claro" oninput="mascara(this)" type="text" minlength="14" maxlength="14" name="cpf" id="cpf" value="<%= clienteUpdate.cpf %>" placeholder="999.999.999-99">
+                                                            <label for="cpf">CPF</label>
                                                         </div>
                                                         <div class="campo">
-                                                            <i class="material-symbols-outlined">person</i>
-                                                            <input type="number" name="idade" id="idade" value="<%= clienteUpdate.idade %>" placeholder="Sua idade"  min="1" required >
-                                                            <label for="idade">Idade</label>
+                                                            <input type="radio" id="tipo1" name="tipo" value="preenchido" required>
+                                                            <label for="tipo1">Boleto preenchido</label>
+                                                            <input type="radio" id="tipo2" name="tipo" value="branco" required>
+                                                            <label for="tipo2">Boleto em branco</label>
+                                                            <input type="radio" id="tipo3" name="tipo" value="capa" required>
+                                                            <label for="tipo3">Capa</label>
+                                                        </div>
+                                                        <div class="campo">
+                                                            <select class="input-claro" id="mes" name="mes" value="" required>
+                                                                <option value="6">6</option>
+                                                                <option value="12">12 </option>                                                  
+                                                            </select>
+                                                            <label for="mes">Meses</label>
                                                         </div>
                                                         <input type="hidden" name="_id" value="<%= clienteUpdate._id %>">
-                                                        <input type="submit" class="cadastrar" value="<% if(clienteUpdate.id != undefined){%>Editar<%} else{%>Cadastrar<%}%>">
+                                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="<% if(clienteUpdate.id != undefined){%>Editar<%} else{%>Cadastrar<%}%>">
                                                     </form>
-                                                    <!-- <form action="../control/cliente.php"  method="POST">
-                                                    <input type='hidden' value="" name = "id">
-                                                        <div class="form-group">
-                                                            <input class="input-claro" type="text" id="nome" class="form-control"  name="nome" placeholder="Nome completo:" value=""required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="input-claro" type="email" id="email" name="email" class="form-control" placeholder="E-mail:" value=""required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="input-claro" type="text" id="tel" name="telefone" minlength="11" maxlength="15" class="form-control" placeholder="Telefone:" value=""required>
-                                                        </div>
-                                                        <div class='endereco'><hr>
-                                                            <div class="form-group">
-                                                            <select class="input-claro" id="uf" name="uf" value=""required>
+                                                    
+                                                            <!-- <select class="input-claro" id="uf" name="uf" value=""required>
                                                                 <option value="Pernambuco">Pernambuco</option>
                                                                 <option value="Maranhão">Maranhão</option>
                                                                 <option value="Piauí">Piauí</option>
@@ -105,25 +101,7 @@
                                                                 <option value="Sergipe">Sergipe</option>
                                                                 <option value="Alagoas">Alagoas</option>  
                                                                 <option value="Bahia">Bahia</option>                                                           
-                                                            </select>
-                                                            
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <input class="input-claro" type="text" id="cidade" name="cidade" placeholder="Cidade" value=""required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <input class="input-claro" type="text" id="bairro" name="bairro" placeholder="Bairro" value=""required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <input class="input-claro" type="number" id="numero" name="numero" placeholder="numero" value=""required>
-                                                            </div>
-                                                            <hr>
-                                                        </div>
-                                                        <div class="form-group">
-                                                                <input class="input-claro" type="password" minlength="8" class="form-control" id="senha" name="senha" placeholder="Senha:"required>
-                                                            </div>
-                                                        <input class="btn btn-primary btn-user btn-block" type="submit" name="enviar" id="enviar" value="Enviar">
-                                                    </form> -->
+                                                            </select> -->
                                                 </div>
                                             </div>
                                         </div>
