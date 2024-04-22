@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Colônia Z-65 | Cadastrar Clientes</title>
+    <title>Colônia Z-65 | Cadastrar Usuários</title>
 
     <!-- Custom fonts for this template -->
     <link rel="icon" type="image/png" sizes="16x16"  href="/img/favicon-16x16.png">
@@ -44,11 +44,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Clientes</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Usuários</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Cadastre o Cliente e gere seu boleto</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Cadastre os Administradores</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -65,7 +65,7 @@
                                                     </div>
                                                     <form  action="/usuarios" method="POST">
                                                         <div class="campo">
-                                                            <input class="input-claro" type="text" name="nome" id="nome" value="<%= usuarioUpdate.nome %>" placeholder="Lu..." required>
+                                                            <input class="input-claro" type="text" name="nome" id="nome" value="<%= usuarioUpdate.nome %>" placeholder="Colônia de Pescadores" required>
                                                             <label for="nome">Nome</label>
                                                         </div>
                                                         <% if(status == 4){ %>
@@ -74,7 +74,6 @@
                                                             </div>
                                                         <% } %>
                                                         <div class="campo"  <% if(status == 4){ %> style = "background-color: rgb(230, 65, 65); border: 2px solid rgb(230, 65, 65);" <% } %>>
-                                                      
                                                             <input class="input-claro" type="email" name="email" id="email" value="<%= usuarioUpdate.email %>" placeholder="colonia@gmail.com" required>
                                                             <label for="email">Email</label>
                                                         </div>
@@ -82,6 +81,10 @@
                                                             <input class="input-claro" type="password" name="senha" id="senha" min-length="8" value="<%= usuarioUpdate.senha %>" placeholder="G%4fsa85@s"  min-length="8" required >
                                                             <label for="senha">Senha</label>
                                                         </div>
+                                                        <!-- <div class="campo">
+                                                            <input class="input-claro" type="password" name="confirmSenha" id="confirmSenha" min-length="8" value="<%= usuarioUpdate.confirmSenha %>" placeholder="G%4fsa85@s"  min-length="8" required >
+                                                            <label for="confirmSenha">Confirmar Senha</label>
+                                                        </div> -->
                                                         <div class="campo">
                                                             <input type="radio" id="nivel1" name="nivel" value="1">
                                                             <label for="nivel1">Nível 1</label>

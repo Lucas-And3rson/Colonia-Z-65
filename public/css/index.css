@@ -9,7 +9,13 @@ h1 {
   
   /* CSS FLEXBOX 1 */
   .titulo{
-    
+    justify-content: center;
+    display: flex;
+    margin: 100px auto 0 auto;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    max-width: 80%;
   }
   #background-video {
     width: 100vw;
@@ -40,9 +46,12 @@ h1 {
     display: flex;
     background-color: rgb(242, 242, 242, 0.2);
     border-radius: 15px;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     max-width: 80%;
-    margin: 100px auto;
+    margin: 10px auto;
+    margin-bottom: 80px;
   }
   p.content-ctt{
     display: flex;
@@ -56,21 +65,23 @@ h1 {
   .flex > div {
     border-radius: 15px;
     background-color: #f2f2f2;
-    flex: 1 1 200px;
+    flex: 50px 1 300px;
     margin: 10px;
     transition: transform .7s;
   }
 
   .flex div.scale:hover{
-    transform: scale(1.03);
+    transform: scale(1.02);
   }
-
   .flex > div > img{
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 15px;
   }
-
-  .flex h3,p{
+  .flex > div > video{
+    border-radius: 10px;
+    padding: 15px;
+  }
+  h3,p{
     flex-wrap: wrap;
     margin: 10px;
   }

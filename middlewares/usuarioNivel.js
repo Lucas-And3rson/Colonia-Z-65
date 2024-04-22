@@ -1,10 +1,11 @@
 const UsuarioModel = require("../models/UsuarioModel");
 
 function nivel(req, res, next){
-    if(req.body.nivel == 3){
-    next();
+    const user = UsuarioModel.findOne({ email: req.body.email });
+    if ((req.session.usuario) && (user.nivel >= 3)){
+        next();
     } else{
-    res.redirect("/usuarios/cadastrar");
+        res.redirect("/usuarios/login");
     }
     }
     module.exports = nivel;
