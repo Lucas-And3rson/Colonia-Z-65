@@ -24,7 +24,7 @@
 
     <!-- Custom styles for this page -->
     <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/css/admin.css">
 </head>
 
 <body id="page-top">
@@ -65,13 +65,19 @@
                                                     </div>
                                                     <form  action="/clientes" method="POST">
                                                         <div class="campo">
-                                                            <input class="input-claro" type="text" name="nome" id="nome" value="<%= clienteUpdate.nome %>" placeholder="" required>
+                                                            <input class="input-claro" type="text" name="nome" id="nome" value="<%= clienteUpdate.nome %> <%cpfExiste.nome%>" placeholder="" required>
                                                             <label for="nome">Nome Completo</label>
                                                         </div>
+                                                        <% if(status == 4){ %>
+                                                            <div class="existe">
+                                                                Esse CPF já foi cadastrado!
+                                                            </div>
+                                                        <% } %>
                                                         <div class="campo">
                                                             <input class="input-claro" oninput="mascara(this)" type="text" minlength="14" maxlength="14" name="cpf" id="cpf" value="<%= clienteUpdate.cpf %>" placeholder="999.999.999-99">
                                                             <label for="cpf">CPF</label>
                                                         </div>
+                                                        <% if(clienteUpdate.id != undefined){ %>
                                                         <div class="campo">
                                                             <input type="radio" id="tipo1" name="tipo" value="preenchido" required>
                                                             <label for="tipo1">Boleto preenchido</label>
@@ -87,8 +93,9 @@
                                                             </select>
                                                             <label for="mes">Meses</label>
                                                         </div>
+                                                        <% } %>
                                                         <input type="hidden" name="_id" value="<%= clienteUpdate._id %>">
-                                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="<% if(clienteUpdate.id != undefined){%>Editar<%} else{%>Cadastrar<%}%>">
+                                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="<% if(clienteUpdate._id != undefined){%>Editar<%} else{%>Cadastrar<%}%>">
                                                     </form>
                                                     
                                                             <!-- <select class="input-claro" id="uf" name="uf" value=""required>

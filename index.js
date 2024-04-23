@@ -29,7 +29,7 @@ app.use(UsuarioRoutes);
 
     app.get("/hub", (req, res)=> {
         if(req.session.usuario!=undefined){
-            res.render("hub");
+            res.render("hub/admin");
         }else{
             res.redirect("/usuarios/login");
         }
@@ -50,7 +50,7 @@ app.use(UsuarioRoutes);
     });
     //caso não encontre a página
     app.use(function(res, res) {
-        res.status(404).render("erro/404");
+        res.status(404).render("/erro/404");
     });
 
 app.listen(process.env.PORT, function(){

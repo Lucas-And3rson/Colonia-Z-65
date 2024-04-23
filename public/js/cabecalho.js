@@ -1,19 +1,27 @@
 const btnMobile = document.getElementById('btn-mobile');
 
 function toggleMenu(event) {
+  let cabecalho = document.querySelector('#header');
+
   if (event.type === 'touchstart') event.preventDefault();
   const nav = document.getElementById('nav');
   nav.classList.toggle('active');
   const active = nav.classList.contains('active');
   event.currentTarget.setAttribute('aria-expanded', active);
   if (active) { //menu ativo
-    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
-    let cabecalho = document.querySelector('#header');
-    cabecalho.classList.toggle('rolagem')
+    if (window.scrollY > 0){
+      event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+    } else{
+      event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+      cabecalho.classList.toggle('rolagem')
+    }
   } else { //menu NÃO ativo
-    let cabecalho = document.querySelector('#header');
-    cabecalho.classList.toggle('rolagem', active)
-    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+    if(window.scrollY == 0){ 
+      event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+      cabecalho.classList.toggle('rolagem')
+    } else{
+      event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+    }
   }
 }
 
@@ -21,11 +29,19 @@ btnMobile.addEventListener('click', toggleMenu);
 btnMobile.addEventListener('touchstart', toggleMenu);
 
 
+function toggleScroll() {
+  const nav = document.getElementById('nav');
+  const active = nav.classList.contains('active');
 
-window.addEventListener("scroll", function(){
   let cabecalho = document.querySelector('#header');
+
+  if (active) { //Menu Aberto
+    
+  } else{ //Menu Fechado
   cabecalho.classList.toggle('rolagem', window.scrollY > 0)
-});
+  }
+}
+window.addEventListener("scroll", toggleScroll);
 
   // MENU ATIVO -------------------------------
 
