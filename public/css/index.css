@@ -52,12 +52,16 @@ h1 {
     margin: 10px auto;
     margin-bottom: 80px;
   }
-  p.content-ctt{
+  a.content-ctt{
     display: flex;
     flex-direction: row;
   }
+  a.content-ctt:hover{
+    color: #000;
+    text-decoration: underline;
+  }
 
-  p > img.mini-logo-ctt{
+  a > img.mini-logo-ctt{
     width: 30px;
     margin: 0 5px 0 0;
   }

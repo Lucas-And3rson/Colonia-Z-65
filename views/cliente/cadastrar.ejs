@@ -65,7 +65,7 @@
                                                     </div>
                                                     <form  action="/clientes" method="POST">
                                                         <div class="campo">
-                                                            <input class="input-claro" type="text" name="nome" id="nome" value="<%= clienteUpdate.nome %> <%cpfExiste.nome%>" placeholder="" required>
+                                                            <input class="input-claro" type="text" name="nome" id="nome" value="<%= clienteUpdate.nome %>" placeholder="" required>
                                                             <label for="nome">Nome Completo</label>
                                                         </div>
                                                         <% if(status == 4){ %>
@@ -88,7 +88,9 @@
                                                         </div>
                                                         <div class="campo">
                                                             <select class="input-claro" id="mes" name="mes" value="" required>
-                                                                <option value="6">6</option>
+                                                                <option value="3">3</option>
+                                                                <option value="6">6</option>    
+                                                                <option value="9">9</option>
                                                                 <option value="12">12 </option>                                                  
                                                             </select>
                                                             <label for="mes">Meses</label>
