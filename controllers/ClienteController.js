@@ -50,6 +50,11 @@ class ClienteController{
         const c = await ClienteModel.findOne({_id:id});
         res.render("cliente/detalhar", {c});
 }
+    static async imprimir(req, res){
+        const id = req.params.id;
+        const c = await ClienteModel.findOne({_id:id});
+        res.render("cliente/boleto", {c});
+    }
     static cadastrarRender(req, res){
         const status = req.query.s;
         // let cpfExiste = {

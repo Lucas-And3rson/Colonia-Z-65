@@ -77,7 +77,6 @@
                                                             <input class="input-claro" oninput="mascara(this)" type="text" minlength="14" maxlength="14" name="cpf" id="cpf" value="<%= clienteUpdate.cpf %>" placeholder="999.999.999-99">
                                                             <label for="cpf">CPF</label>
                                                         </div>
-                                                        <% if(clienteUpdate.id != undefined){ %>
                                                         <div class="campo">
                                                             <input type="radio" id="tipo1" name="tipo" value="preenchido" required>
                                                             <label for="tipo1">Boleto preenchido</label>
@@ -95,22 +94,9 @@
                                                             </select>
                                                             <label for="mes">Meses</label>
                                                         </div>
-                                                        <% } %>
                                                         <input type="hidden" name="_id" value="<%= clienteUpdate._id %>">
                                                         <input type="submit" class="btn btn-primary btn-user btn-block" value="<% if(clienteUpdate._id != undefined){%>Editar<%} else{%>Cadastrar<%}%>">
                                                     </form>
-                                                    
-                                                            <!-- <select class="input-claro" id="uf" name="uf" value=""required>
-                                                                <option value="Pernambuco">Pernambuco</option>
-                                                                <option value="Maranhão">Maranhão</option>
-                                                                <option value="Piauí">Piauí</option>
-                                                                <option value="Ceará">Ceará</option>
-                                                                <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-                                                                <option value="Paraíba">Paraíba</option>
-                                                                <option value="Sergipe">Sergipe</option>
-                                                                <option value="Alagoas">Alagoas</option>  
-                                                                <option value="Bahia">Bahia</option>                                                           
-                                                            </select> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -129,7 +115,7 @@
 
         </div>
         <!-- End of Content Wrapper -->
-
+        </div>
     </div>
     <!-- End of Page Wrapper -->
 
@@ -144,15 +130,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">ATENÇÃO</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Você tem certeza que deseja finalizar a sessão?</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Fechar</button>
+                    <a class="btn btn-primary" href="/logout">Sair</a>
                 </div>
             </div>
         </div>
